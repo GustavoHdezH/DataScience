@@ -1,4 +1,5 @@
 import os
+import gc
 import pandas as pd
 from pathlib import Path
 from dotenv import load_dotenv
@@ -25,5 +26,6 @@ def read_csv(env, sep, head):
 if __name__ == "__main__":
     try:
         read_csv('.env', ',', 20)
+        gc.enable()
     except KeyboardInterrupt:
         exit()
