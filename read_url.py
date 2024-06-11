@@ -1,5 +1,7 @@
 import gc
 import os
+import sys
+
 import urllib3
 import pandas as pd
 from pathlib import Path
@@ -76,4 +78,4 @@ if __name__ == "__main__":
         get_file_from_url('.env', ',', 5)
         gc.enable()
     except KeyboardInterrupt:
-        exit()
+        sys.exit()
