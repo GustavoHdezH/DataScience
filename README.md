@@ -4,12 +4,12 @@
 <div> 
   <h1 align="center">DataScience</h1>
   <p>
-    Curso de machine learning: Data Science en python. Aplicando conocimientos previdos
-    del tema.
+    Here you will find the fruit of my dedication to the Data Science course in Python, where I have put my previous 
+    knowledge into practice and acquired new skills in the fascinating world of Machine Learning.
   </p>
 </div>
 
-* [Repositorio de los datasets][dt]
+* [Dataset repository][dt]
 
 ## Autor
 
