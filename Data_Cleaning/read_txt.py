@@ -2,15 +2,15 @@ import os
 import gc
 import sys
 
-import dotenv
 import pandas as pd
 from pathlib import Path
+import dotenv
 
 
-class ReadCsv:
+class ReadTxt:
     """
-        A class for efficiently reading CSV files and display information.
-        """
+    A class for efficiently reading TXT files and display information.
+    """
 
     def __init__(self, env_path: Path = Path('../.env')):
         """
@@ -23,12 +23,12 @@ class ReadCsv:
     @staticmethod
     def load_file_to_dataframe(sep: str = ',', skip: int = 0) -> pd.DataFrame:
         """
-        Loads a CSV file into pandas Dataframe
+        Loads a TXT file into pandas Dataframe
         :param sep: (str, optional): Column separator.
         :param skip: (int, optional):Number of rows to skip at the beginning.
         :return: pd.Dataframe
         """
-        path_file = os.getenv('CSV')
+        path_file = os.getenv('TXT')
         return pd.read_csv(path_file, sep=sep, skiprows=skip)
 
     def show_info_on_terminal(self, rows: int = 20) -> None:
@@ -43,7 +43,7 @@ class ReadCsv:
 
 if __name__ == "__main__":
     try:
-        reader = ReadCsv()
+        reader = ReadTxt()
         reader.show_info_on_terminal()
         gc.enable()
     except KeyboardInterrupt:
