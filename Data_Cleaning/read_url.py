@@ -1,11 +1,11 @@
-import os
 import gc
+import os
 import sys
+from pathlib import Path
 
 import dotenv
 import pandas as pd
 import urllib3
-from pathlib import Path
 
 
 class ReadUrl:

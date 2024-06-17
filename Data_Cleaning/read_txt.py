@@ -1,10 +1,10 @@
-import os
 import gc
+import os
 import sys
-
-import pandas as pd
 from pathlib import Path
+
 import dotenv
+import pandas as pd
 
 
 class ReadTxt:

@@ -1,16 +1,17 @@
-import os
 import gc
+import os
 import sys
-
-import pandas as pd
 from pathlib import Path
+
 import dotenv
+import pandas as pd
 
 
 class Append:
     """
     This class facilitates appending data from a file with headers to another file with data.
     """
+
     def __init__(self, env_path: Path = Path('../.env')):
         """
         Initializes the class by loading environment variables.
