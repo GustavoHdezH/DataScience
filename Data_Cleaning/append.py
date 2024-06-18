@@ -21,7 +21,7 @@ class Append:
         dotenv.load_dotenv(dotenv_path=self.env_path)
 
     @staticmethod
-    def load_file_with_headers():
+    def load_file_with_headers() -> pd.read_csv:
         """
         Loads a file containing colum headers as a pandas DataFrame
         :return: pd.DataFrame: A DataFrame containing the loaded column headers
