@@ -32,7 +32,7 @@ class DummyData:
         data = self.drop_dummy_column()
         gender = self.dummy_variable()
         data = pd.concat([data, gender], axis=1)
-        return print(data.to_string())
+        return data.to_string()
 
     def create_dummies(self, var_name):
         data = self.load_file_to_dataframe()

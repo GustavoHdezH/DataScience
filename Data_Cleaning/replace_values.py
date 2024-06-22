@@ -28,21 +28,33 @@ class ReplaceValues:
 
     def show_empty_values_on_file(self) -> None:
         data = self.load_file_to_dataframe()
-        print("Empty age values: {}".format(pd.isnull(data["age"]).values.ravel().sum()))
-        print("Empty fare values: {}".format(pd.isnull(data["fare"]).values.ravel().sum()))
-        print("Empty cabin values: {}".format(pd.isnull(data["cabin"]).values.ravel().sum()))
-        print("Empty embarked values: {}".format(pd.isnull(data["embarked"]).values.ravel().sum()))
-        print("Empty boat values: {}".format(pd.isnull(data["boat"]).values.ravel().sum()))
-        print("Empty body values: {}".format(pd.isnull(data["body"]).values.ravel().sum()))
+        # Counting all values
+        headers = data.columns
+        empty_values_by_column = {}
+        for header in headers:
+            empty_values_in_column = pd.isnull(data[header]).values.sum()
+            empty_values_by_column[header] = empty_values_in_column
+        for header, empty_value_count in empty_values_by_column.items():
+            print(f"Empty values in '{header}': {empty_value_count}")
+        # Example for counting individual values
+        print("Empty body values: {}".format(pd.isnull(data["home.dest"]).values.ravel().sum()))
 
     def replace_empty_values_on_file(self):
         data = self.load_file_to_dataframe()
-        data["age"] = data["age"].fillna(0)
-        data["fare"] = data["fare"].fillna(0)
-        data["cabin"] = data["cabin"].fillna('unknown')
-        data["embarked"] = data["embarked"].fillna('unknown')
-        data["boat"] = data["boat"].fillna(0)
-        data["body"] = data["body"].fillna(0)
+        replace_values = {
+            "age": 0,
+            "fare": 0,
+            "cabin": "unknown",
+            "embarked": "unknown",
+            "boat": 0,
+            "body": 0,
+            "home.dest": "unknown"
+        }
+        data = data.fillna(replace_values)
+        return data
+
+    def save_data(self):
+        data = self.replace_empty_values_on_file()
         path_save = os.getenv('SAVE')
         file_name = os.path.join(path_save, os.getenv('NAME_CSV'))
         return data.to_csv(file_name + '.csv', index=False)
@@ -51,7 +63,7 @@ class ReplaceValues:
 if __name__ == "__main__":
     try:
         reader = ReplaceValues()
-        reader.replace_empty_values_on_file()
+        reader.save_data()
         gc.enable()
     except KeyboardInterrupt:
         sys.exit()
