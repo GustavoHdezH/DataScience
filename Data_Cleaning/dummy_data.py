@@ -9,7 +9,7 @@ import pandas as pd
 
 class DummyData:
 
-    def __init__(self, env_path: Path = Path('../.env')):
+    def __init__(self, env_path: Path = Path('../.env')) -> dotenv:
         self.env_path = env_path
         dotenv.load_dotenv(dotenv_path=self.env_path)
 
