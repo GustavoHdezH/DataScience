@@ -18,6 +18,7 @@ Additionally, a technique is implemented to clean up missing values (NaN) by rep
 ## Links
 * [Dataset repository][dt] - Repository used during this project
 * [CSV from URL][csv] - Resource used for the read_url.py exercise
+* [Dotenv Vault][env] - Technology used to synchronize and manage versions of .env files
 
 ## Autor
 
@@ -35,4 +36,5 @@ Additionally, a technique is implemented to clean up missing values (NaN) by rep
 [gh]: https://github.com/GustavoHdezH
 [dt]: https://github.com/joanby/python-ml-course
 [csv]: https://catalog.data.gov/dataset/air-quality
+[env]: https://www.dotenv.org
 <!-- Fin de enlaces de este documento -->
