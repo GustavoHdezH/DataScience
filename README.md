@@ -15,8 +15,9 @@ This section describes the process of reading data from various formats (CSV, TX
 processing. The main goal is to combine the headers with the corresponding data and unify them into a single data set. 
 Additionally, a technique is implemented to clean up missing values (NaN) by replacing them with defined values.
 
-
-* [Dataset repository][dt]
+## Links
+* [Dataset repository][dt] - Repository used during this project
+* [CSV from URL][csv] - Resource used for the read_url.py exercise
 
 ## Autor
 
@@ -26,11 +27,12 @@ Additionally, a technique is implemented to clean up missing values (NaN) by rep
 
 <div align="center"> 
   <p>
-    Made with &hearts; by ghernandez  |   2020-2023
+    Made with &hearts; by ghernandez  |   2020-2024
   </p>
 </div>
 
 <!-- Inicio de enlaces de este documento -->
 [gh]: https://github.com/GustavoHdezH
 [dt]: https://github.com/joanby/python-ml-course
+[csv]: https://catalog.data.gov/dataset/air-quality
 <!-- Fin de enlaces de este documento -->
