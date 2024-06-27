@@ -1,15 +1,15 @@
 import os
 import gc
 import sys
+from os.path import join
 
 import pandas as pd
-from pathlib import Path
 import dotenv
 
 
 class ReadXls:
 
-    def __init__(self, env_path: Path = Path('../.env')):
+    def __init__(self, env_path: str = join(os.path.dirname(__file__), '../.env')):
         self.env_path = env_path
         dotenv.load_dotenv(dotenv_path=self.env_path)
 

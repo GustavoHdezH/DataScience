@@ -1,7 +1,7 @@
 import gc
 import os
 import sys
-from pathlib import Path
+from os.path import join
 
 import dotenv
 import pandas as pd
@@ -12,7 +12,7 @@ class ReadCsv:
         A class for efficiently reading CSV files and display information.
         """
 
-    def __init__(self, env_path: Path = Path('../.env')):
+    def __init__(self, env_path: str = join(os.path.dirname(__file__), '../.env')):
         """
         Initializes the class by loading environment variables.
         :param env_path: (Path, optional): Path to the environment file.

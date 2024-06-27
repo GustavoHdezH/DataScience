@@ -1,7 +1,7 @@
 import gc
 import os
 import sys
-from pathlib import Path
+from os.path import join
 
 import dotenv
 import pandas as pd
@@ -9,7 +9,7 @@ import pandas as pd
 
 class ReplaceValues:
 
-    def __init__(self, env_path: Path = Path('../.env')):
+    def __init__(self, env_path: str = join(os.path.dirname(__file__), '../.env')):
         self.env_path = env_path
         dotenv.load_dotenv(dotenv_path=self.env_path)
 
