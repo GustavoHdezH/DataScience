@@ -9,11 +9,15 @@
   </p>
 </div>
 
+* [Definition of terms][terms]
+
 ### Section 1: Data Cleaning
 
 This section describes the process of reading data from various formats (CSV, TXT, XLS and URL) and its subsequent 
 processing. The main goal is to combine the headers with the corresponding data and unify them into a single data set. 
 Additionally, a technique is implemented to clean up missing values (NaN) by replacing them with defined values.
+
+### Section 2: Data Management Operations
 
 ## Links
 * [Dataset repository][dt] - Repository used during this project
@@ -37,4 +41,5 @@ Additionally, a technique is implemented to clean up missing values (NaN) by rep
 [dt]: https://github.com/joanby/python-ml-course
 [csv]: https://catalog.data.gov/dataset/air-quality
 [env]: https://www.dotenv.org
+[terms]: Definition_of_terms/Terms.md
 <!-- Fin de enlaces de este documento -->
